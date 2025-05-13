@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Iris Flower Predictor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Iris Flower Type Predictor 🌸</h1>
+        <form method="POST">
+            <input type="number" step="any" name="sepal_length" placeholder="Sepal Length (cm)" required>
+            <input type="number" step="any" name="sepal_width" placeholder="Sepal Width (cm)" required>
+            <input type="number" step="any" name="petal_length" placeholder="Petal Length (cm)" required>
+            <input type="number" step="any" name="petal_width" placeholder="Petal Width (cm)" required>
+            <button type="submit">Predict</button>
+        </form>
+        {% if prediction %}
+        <div class="result">
+            <p>🌼 Predicted Flower: <strong>{{ prediction }}</strong></p>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
